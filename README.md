@@ -7,8 +7,11 @@ For the first task, we can compare several well-known classification algorithms 
 
 ## Authors
 Kenneth Lee ([@kenneth-lee-ch](https://github.com/kenneth-lee-ch))
+
 Roger Zhou ([@roxes610](https://github.com/roxes610))
+
 Libin Feng ([@ual33](https://github.com/ual33))
+
 Ying Cheng ([@gila-c](https://github.com/gila-c))
 
 
