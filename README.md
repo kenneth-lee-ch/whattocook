@@ -5,5 +5,12 @@ We explore the potential of creating new recipes via text data. Our goal has two
 
 For the first task, we can compare several well-known classification algorithms such as logistic regression, naive bayes, support vector machine, discriminant analysis. The evaluation methods will include F1-score, recall and precision. We will also approach the second task with recurrent neural networks, LSTM model, and some state-of-the-art neural network architectures such as Roberta. The second task will be evaluated by perplexity, which is the inverse probability of the test set, normalized by the number of words. 
 
+## Authors
+Kenneth Lee ([@kenneth-lee-ch](https://github.com/kenneth-lee-ch))
+Roger Zhou ([@roxes610](https://github.com/roxes610))
+Libin Feng ([@ual33](https://github.com/ual33))
+Ying Cheng ([@gila-c](https://github.com/gila-c))
+
+
 ## Data Source:
 https://www.kaggle.com/c/whats-cooking/data
