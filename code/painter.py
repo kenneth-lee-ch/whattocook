@@ -79,7 +79,7 @@ def plot2PCA(pcaresult, title, data, size = (15,10)):
     ax.legend(cuisines)
     plt.show()
 
-def plotCM(cm, cm_title, size = (22,18)):
+def plotCM(cm, le, cm_title, size = (22,18)):
     """
 	   this function plots confusion matrix on a colored heatmap.
     
@@ -93,13 +93,13 @@ def plotCM(cm, cm_title, size = (22,18)):
 		None
 	"""
     # Get the number of row of the matrix
-    list_of_num = cm.shape[0]
+    dim = cm.shape[0]
     # Create a dataframe
-    df_cm= pd.DataFrame(cm, index = le.inverse_transform(np.arrange(num))  ,columns = le.inverse_transform(np.arrange(num)))
+    df_cm= pd.DataFrame(cm, index = le.inverse_transform(np.arange(dim))  ,columns = le.inverse_transform(np.arange(dim)))
     # Set the size for the figure
     plt.figure(figsize = size)
     # Create the heatmap
-    ax = sns.heatmap(df, annot=True, fmt="d",cmap="YlGnBu")
+    ax = sns.heatmap(df_cm, annot=True, fmt="d",cmap="YlGnBu")
     # Set the labels
     ax.set(ylabel='True Tasks', xlabel='clustering labels', title=cm_title)
     plt.show()
