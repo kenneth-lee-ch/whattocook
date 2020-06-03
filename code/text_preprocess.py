@@ -2,7 +2,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk import WordPunctTokenizer
 import re
 import unicodedata
-
+import numpy as np
 
 # Instantiate an tokenizer object and an lemmatizer object
 wpt = WordPunctTokenizer()
@@ -10,8 +10,9 @@ lemmatizer = WordNetLemmatizer()
 
 def clean(text):
     """
-    this function applies different function to manipulate a strnig 
-    Arg:
+        this function applies different function to manipulate a strnig 
+
+    Arguemnts:
         text(str): a string
     Return:
         text(str): a "cleaned" string
@@ -29,6 +30,7 @@ def clean(text):
 def text_preprocess(data):
     """
         preprocess the ingredients names and preserves the structure of the original data
+
     Arguemnts:
         data (dataframe): a dataframe that contains all the ingredients in the data
     Return:
@@ -58,3 +60,24 @@ def text_preprocess(data):
                 clean_ls.append(cleaned_txt)
         cleaned_corpus.append(clean_ls)
     return cleaned_corpus    
+
+
+def convertWord2VecForTrainTestSplit(word2vec_model, corpus):
+    """
+        this function converts the word embedding trained by word2vec to a 39774 by D matrix for training classifiers. 
+        D is the number of dimensions specified in the parameters for training word2vec model. 
+    
+    Arguments:
+        word2vec_model: a word embedding trained by word2vec model 
+        doc: a list of lists, which contain ingredient names in the data.
+    Return:
+        a 39774 by D np array 
+    """
+    weight_matrix = [] # Create an empty list
+    for ingredients in corpus:
+        # Sum the vectors and divded them by the number of ingredients
+        ingredient_vectors = np.sum(word2vec_model.wv[ingredients], axis = 0)/len(ingredients)
+        # Add the weights to a list
+        weight_matrix.append(ingredient_vectors)
+    # Convert the list to a nparray
+    return np.asarray(weight_matrix)
