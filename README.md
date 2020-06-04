@@ -16,7 +16,7 @@ For the second task, (TO BE ADDED)
 
 	* `painter.py`: this file contains codes for plotting various graphs such as confusion matrix, f1-micro averaged curve, TSNE and PCA components, horizontal barcharts. It also controls the color palette used for the TSNE and PCA to ensure the colors being used for various cuisines are consistent.
 
-	* `tex_preprocess.py`: this file contains codes to preprocess the data for the vectorizers and the word2vec model.
+	* `text_preprocess.py`: this file contains codes to preprocess the data for the vectorizers and the word2vec model.
 
 
 * `/notebook/`: this folder contains the main report writeup.
