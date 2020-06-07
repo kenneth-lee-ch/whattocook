@@ -108,7 +108,7 @@ def plotCM(cm, le, cm_title, size = (22,18)):
     # Get the number of row of the matrix
     dim = cm.shape[0]
     # Create a dataframe
-    df_cm= pd.DataFrame(cm, index = le.inverse_transform(np.arange(dim))  ,columns = le.inverse_transform(np.arange(dim)))
+    df_cm= pd.DataFrame(cm, index = le.inverse_transform(np.arange(dim))  ,columns = np.arange(dim))
     # Set the size for the figure
     plt.figure(figsize = size)
     # Create the heatmap
