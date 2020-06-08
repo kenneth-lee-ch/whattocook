@@ -6,7 +6,7 @@ We explore the potential of creating new recipes via text data. Our goal has two
 
 For the first task, we compare several well-known classification algorithms such as logistic regression, naive bayes, linear discriminant analysis, decision tree classifier, random forest, Adaboost, multi-layer perceptrons. We conduct grid search with 5-fold stratified cross-validation for hyparameter tuning.
 
-For the second task, (TO BE ADDED)
+For the second task, we adopt two approaches to process the recipe text, which is the key to the recommender system. We first explore the recommended ingredients based on similarity to the given recipe using vectorizers; and then we examine the performance, in terms of the "top n accuracy" metric, of a baseline popularity model and a sophiticated collaborative filtering model under the `text_preprocess` method.
 
 ## File Directory Description
 
@@ -16,12 +16,18 @@ For the second task, (TO BE ADDED)
 
 	* `painter.py`: this file contains codes for plotting various graphs such as confusion matrix, f1-micro averaged curve, TSNE and PCA components, horizontal barcharts. It also controls the color palette used for the TSNE and PCA to ensure the colors being used for various cuisines are consistent.
 
-	* `text_preprocess.py`: this file contains codes to preprocess the data for the vectorizers and the word2vec model.
+	* `text_preprocess.py`: this file contains codes to preprocess the data for the vectorizers and the word2vec model. `vectorizer_preparation` method (for task 2, approach 1) is also included in this module.
+    
+	* `ingredient_recommendation.py`: this module recommends ingredients based on a list of ingredients. Recommended ingredients will be printed with their recommendation indices in a descending order, meaning ingredients we recommend more will be printed first (task 2, approach 1)
+    
+	* `RecSys.py`: This modules defines 3 classes, "top n accuracy" method for model evaluation, popularity model for RecSys, and collaborative filtering model for RecSys. The function, `corpus_to_matrix`, that converts the recipe corpus into expanded recipe matrix is included, too (task 2, approach 2).
 
 
-* `/notebook/`: this folder contains the main report writeup.
+* `/notebooks/`: this folder contains the main report writeup.
 
-	* `Food_cuisine_classification.ipynb`: this is the notebook for the multi-class classification problem to classify various cuisines based on ingredients.
+	* `Food_cuisine_classification.ipynb`: this is the notebook for the multi-class classification problem to classify various cuisines based on ingredients (task 1).
+    
+	* `ingredient_recommendation.ipynb`: this notebook showcases our two approaches to the recommender system for the ingredient based on a user-specified list of ingredients (i.e. task 2).
 
 * `/data/`: this folder stores all data files.
 
