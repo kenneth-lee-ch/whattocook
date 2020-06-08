@@ -2,11 +2,15 @@
 
 ## Abstract
 
-We explore the potential of creating new recipes via text data. Our goal has two folds. First, we aim to classify the cuisine based on ingredients. Second, we want to predict an ingredient that is missing from a given list of ingredients and a cuisine name. The first task can be formulated as a multi-class classification problem.  The second task can be viewed as a recommender system. To convert the text into numerical signals, we can use a TF-IDF vectorizer, Countvectorizer. We will also consider utilizing word embeddings from word2vec pretained embedding. We are able to achieve 0.84 F1-micro scores for the multi-classification task with logistic regression and countvectorizer. We also see that linear algorithms generally perform better when the data is vectorized by bag-of-words models. 
+We explore the potential of creating new recipes via text data. Our goal has two folds. First, we aim to classify the cuisine based on ingredients. Second, we want to predict an ingredient that is missing from a given list of ingredients and a cuisine name. The first task can be formulated as a multi-class classification problem.  To convert the text into numerical signals, we can use TFIDF vectorizer, Countvectorizer,  word embedding based on Word2Vec model. We are able to achieve 0.85 micro-averaged F1 scores for the multi-classification task with multilayer perceptrons and bag-of-words model. 
 
-For the first task, we compare several well-known classification algorithms such as logistic regression, naive bayes, linear discriminant analysis, decision tree classifier, random forest, Adaboost, multi-layer perceptrons. We conduct grid search with 5-fold stratified cross-validation for hyparameter tuning.
+For the first task, we compare several well-known classification algorithms such as logistic regression, naive bayes, linear discriminant analysis, decision tree classifier, random forest, Adaboost, multi-layer perceptrons. We conduct grid search with 5-fold stratified cross-validation for hyperparameter tuning.
 
 For the second task, we adopt two approaches to process the recipe text, which is the key to the recommender system. We first explore the recommended ingredients based on similarity to the given recipe using vectorizers; and then we examine the performance, in terms of the "top n accuracy" metric, of a baseline popularity model and a sophiticated collaborative filtering model under the `text_preprocess` method.
+
+## How to read this project?
+
+* We recommend to open `report.pdf` along with the notebooks listed below. The report details the methods and provides the results along with insights we gained. The notebooks contain some visualizations that may not be on the report. Please look at the `code` folder for any details about the code.
 
 ## File Directory Description
 
@@ -34,6 +38,8 @@ For the second task, we adopt two approaches to process the recipe text, which i
 	* `train.csv`: this file contains training data for training models.
 
 	* `test.csv`: this file contains ingredients for models to predict the cuisines.
+
+* `report.pdf`: this is a writeup to detail everything about this project.
 
 ## How to run the code
 
