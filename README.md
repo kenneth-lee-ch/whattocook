@@ -35,9 +35,9 @@ For the second task, we adopt two approaches to process the recipe text, which i
 
 * `/data/`: this folder stores all data files.
 
-	* `train.csv`: this file contains training data for training models.
+	* `train.json`: this file contains training data for training models.
 
-	* `test.csv`: this file contains ingredients for models to predict the cuisines.
+	* `test.json`: this file contains ingredients for models to predict the cuisines.
 
 * `report.pdf`: this is a writeup to detail everything about this project.
 
